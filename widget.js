@@ -16,7 +16,7 @@
 (() => {
 
     const config = window.CommandPaletteConfig || {
-        data: "/search.json"
+        data: "./search.json"
     };
 
     let searchData = [];
