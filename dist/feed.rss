@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel><title>SatisPalette Updates</title><link>https://gtref.github.io/SatisPalette/dist/index.html</link>
+<description>Updates about SatisPalette</description><language>en</language>
+<lastBuildDate>Wed, 11 Nov 2026 09:11:27 GMT</lastBuildDate>
+<pubDate>Wed, 11 Nov 2026 09:11:27 GMT</pubDate>
+<atom:link href="https://gtref.github.io/SatisPalette/dist/feed.rss" rel="self" type="application/rss+xml" />
+<item><title>Welcome to SatisPalette!</title><description><![CDATA[<p>It&#39;s great to have you here. If you&#39;ve just discovered the project, I&#39;m <a href="https://github.com/gtref">@gtref</a>, the creator of SatisPalette and founder of SatisCorporation. Our goal is simple: bring technology back to being straightforward, understandable, and enjoyable to use.</p>
+<p>SatisPalette follows that same philosophy. Rather than being overloaded with unnecessary complexity, it was built as a lightweight and simple way to search content across your website and quickly navigate to the pages you&#39;re looking for.</p>
+<p>This is the very first public release, Version 0.1.0, and marks the beginning of the project. While the feature set is still small, the foundation is in place, and more improvements are planned as development continues.</p>
+<p>Thank you for trying SatisPalette. Your feedback, bug reports, and ideas are always welcome. The repository is located <a href="https://github.com/gtref/SatisPalette">here</a>.</p>
+<p>Tags: <a href='tag_Welcome.html'>Welcome</a>, <a href='tag_SatisPalette.html'>SatisPalette</a> </p>
+<!-- text end -->
+]]></description>
+<link>https://gtref.github.io/SatisPalette/dist/welcome-to-satispalette.html</link><guid>https://gtref.github.io/SatisPalette/dist/welcome-to-satispalette.html</guid>
+<dc:creator>Ronan</dc:creator><pubDate>Wed, 11 Nov 2026 09:11:24 GMT</pubDate></item>
+</channel></rss>

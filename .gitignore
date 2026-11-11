@@ -1,0 +1,5 @@
+posts/
+pp.ps1
+.pp.conf
+dist/.*.zip
+dist/.*.json
