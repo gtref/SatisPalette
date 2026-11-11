@@ -3,3 +3,6 @@ pp.ps1
 .pp.conf
 dist/.*.zip
 dist/.*.json
+node_modules
+!build.js
+.astro/

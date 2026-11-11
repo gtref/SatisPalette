@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <script>
             window.CommandPaletteConfig = {
                 data: "/search.json"
@@ -148,38 +150,45 @@
             }
         </style>
     </head>
-<body>
-    <main>
-        <header>
-            <p class="eyebrow">A tiny navigation helper</p>
-            <h1>SatisPalette</h1>
-            <p class="tagline">Simplifying navigation, one search at a time.</p>
-        </header>
+    <body>
+        <main>
+            <header>
+                <p class="eyebrow">A tiny navigation helper</p>
+                <h1>SatisPalette</h1>
+                <p class="tagline">Simplifying navigation, one search at a time.</p>
+            </header>
 
-        <section>
-            <h2>The story</h2>
-            <p>Finding the right page on a website can take more clicks than it should. SatisPalette is a small, straightforward command palette that helps visitors search indexed pages and jump where they need to go.</p>
-        </section>
+            <section>
+                <h2>The story</h2>
+                <p>Finding the right page on a website can take more clicks than it should. SatisPalette is a small, straightforward command palette that helps visitors search indexed pages and jump where they need to go.</p>
+            </section>
 
-        <section>
-            <h2>Get a copy</h2>
-            <p>When the repository is available, download or clone the project files from GitHub. Add <code>widget.js</code> and your <code>search.json</code> index to your site.</p>
-            <a class="repo-link" href="https://github.com/gtref/SatisPalette">Get SatisPalette on GitHub</a>
-        </section>
+            <section>
+                <h2>Get a copy</h2>
+                <p>Download or clone the project from GitHub. Add <code>widget.js</code> and your <code>search.json</code> index to your site.</p>
+                <a class="repo-link" href="https://github.com/gtref/SatisPalette">Get SatisPalette on GitHub</a>
+            </section>
 
-        <section>
-            <h2>Set it up</h2>
-            <p>Configure the path to your search index before loading the widget. Then press <kbd>Ctrl</kbd> + <kbd>K</kbd> to search your pages.</p>
-            <pre><code>&lt;script&gt;
+            <section>
+                <h2>Set it up</h2>
+                <p>Configure the path to your search index before loading the widget. Then press <kbd>Ctrl</kbd> + <kbd>K</kbd> to search your pages.</p>
+                <pre><code>&lt;script&gt;
   window.CommandPaletteConfig = { data: "./search.json" };
 &lt;/script&gt;
 &lt;script src="widget.js"&gt;&lt;/script&gt;</code></pre>
-        </section>
+            </section>
 
-        <section>
-            <p>Please check out our blog</p>
-            <a class="repo-link" href="dist/">Blog</a>
-        </section>
-    </main>
-</body>
+            <section>
+                <h2>Documentation</h2>
+                <p>Learn how to install the widget, configure its index, and troubleshoot search.</p>
+                <a class="repo-link" href="docs/">Read the documentation</a>
+            </section>
+
+            <section>
+                <h2>Blog</h2>
+                <p>Read the latest SatisPalette updates.</p>
+                <a class="repo-link" href="../dist/">Visit the blog</a>
+            </section>
+        </main>
+    </body>
 </html>

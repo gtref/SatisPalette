@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Install, configure, and use the SatisPalette command palette."
+    />
+    <meta name="theme-color" content="#f5f7fb" />
+    <title>Documentation | SatisPalette</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to documentation</a>
+    <header class="topbar">
+      <a class="brand" href="../" aria-label="SatisPalette home">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span>SatisPalette</span>
+      </a>
+      <div class="topbar-links">
+        <a href="https://github.com/gtref/SatisPalette">GitHub</a>
+        <a href="../dist/">Blog</a>
+      </div>
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="sidebar"
+      >
+        <span class="menu-icon" aria-hidden="true"></span>
+        <span class="sr-only">Toggle documentation menu</span>
+      </button>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar" id="sidebar">
+        <p class="sidebar-label">GUIDES</p>
+        <label class="search-box">
+          <span class="sr-only">Filter documentation links</span>
+          <svg aria-hidden="true" viewBox="0 0 20 20">
+            <circle cx="8.5" cy="8.5" r="5.5"></circle>
+            <path d="m13 13 4 4"></path>
+          </svg>
+          <input id="nav-filter" type="search" placeholder="Find a guide" />
+          <kbd>/</kbd>
+        </label>
+        <nav aria-label="Documentation">
+          <a class="nav-link" href="#overview">Overview</a>
+          <a class="nav-link" href="#quick-start">Quick start</a>
+          <a class="nav-link" href="#search-index">Search index</a>
+          <a class="nav-link" href="#configuration">Configuration</a>
+          <a class="nav-link" href="#keyboard">Keyboard and search</a>
+          <a class="nav-link" href="#troubleshooting">Troubleshooting</a>
+        </nav>
+        <div class="sidebar-footer">
+          <span class="status-dot" aria-hidden="true"></span>
+          Plain JavaScript. No framework required.
+        </div>
+      </aside>
+
+      <main id="main-content">
+        <div class="breadcrumbs">
+          <a href="../">SatisPalette</a>
+          <span aria-hidden="true">/</span>
+          <span>Documentation</span>
+        </div>
+
+        <section class="hero" id="overview">
+          <p class="eyebrow">DOCUMENTATION</p>
+          <h1>Find your way around.</h1>
+          <p class="hero-copy">
+            SatisPalette is a tiny, client-side command palette that helps
+            visitors find and open pages on your website.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#quick-start">
+              Get started <span aria-hidden="true">→</span>
+            </a>
+            <a class="button button-secondary" href="https://github.com/gtref/SatisPalette">
+              View on GitHub
+            </a>
+          </div>
+          <div class="feature-strip">
+            <div>
+              <span class="feature-icon" aria-hidden="true">⌘</span>
+              <span>Open with <kbd>Ctrl</kbd> <kbd>K</kbd></span>
+            </div>
+            <div>
+              <span class="feature-icon" aria-hidden="true">↗</span>
+              <span>Search your own pages</span>
+            </div>
+            <div>
+              <span class="feature-icon" aria-hidden="true">◇</span>
+              <span>Small, framework-free widget</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="doc-section" id="quick-start">
+          <div class="section-heading">
+            <p class="eyebrow">01 · INSTALLATION</p>
+            <h2>Up and running in a few minutes.</h2>
+            <p>Add the widget and its JSON index to the site you want to search.</p>
+          </div>
+
+          <h3>1. Add the files</h3>
+          <p>Copy <code>widget.js</code> to your website and create a <code>search.json</code> file as described in the <a href="#search-index">search index guide</a>.</p>
+
+          <h3>2. Configure and load the widget</h3>
+          <p>Set the index URL before loading the script. The URL can be relative to the current page or start at your site's root.</p>
+          <div class="code-card">
+            <div class="code-header">
+              <span>HTML</span>
+              <button class="copy-button" type="button" data-copy="embed-code">
+                Copy
+              </button>
+            </div>
+            <pre><code id="embed-code">&lt;script&gt;
+  window.CommandPaletteConfig = {
+    data: "./search.json"
+  };
+&lt;/script&gt;
+&lt;script src="./widget.js"&gt;&lt;/script&gt;</code></pre>
+          </div>
+
+          <h3>3. Serve your site over HTTP</h3>
+          <p>
+            The widget uses <code>fetch()</code> to load the index and its
+            pages. Use a local web server or your production host; opening the
+            page as a <code>file://</code> URL is not supported.
+          </p>
+
+          <div class="callout">
+            <span class="callout-icon" aria-hidden="true">i</span>
+            <p>
+              Pages must be available from the same origin as your site, or
+              their server must allow the requests with CORS.
+            </p>
+          </div>
+        </section>
+
+        <section class="doc-section" id="search-index">
+          <div class="section-heading">
+            <p class="eyebrow">02 · CONTENT</p>
+            <h2>Choose what people can search.</h2>
+            <p>
+              The index is a JSON array. Add one entry for every page you want
+              the palette to include.
+            </p>
+          </div>
+
+          <div class="code-card">
+            <div class="code-header">
+              <span>search.json</span>
+              <button class="copy-button" type="button" data-copy="index-code">
+                Copy
+              </button>
+            </div>
+            <pre><code id="index-code">[
+  {
+    "title": "Getting started",
+    "url": "/guide/getting-started.html"
+  },
+  {
+    "title": "FAQ",
+    "url": "/faq.html"
+  }
+]</code></pre>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Field</th><th>Required</th><th>Description</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>url</code></td>
+                  <td><span class="required">Yes</span></td>
+                  <td>Page URL to fetch and include in search.</td>
+                </tr>
+                <tr>
+                  <td><code>title</code></td>
+                  <td>No</td>
+                  <td>Display title. Defaults to the page title, then its URL.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <ul class="detail-list">
+            <li>Root-relative URLs like <code>/guide/start.html</code> start at your domain's root.</li>
+            <li>Relative URLs like <code>./guide/start.html</code> are resolved from the page that loaded the widget.</li>
+            <li>Only add pages that should be visible in search. The widget indexes their title and visible body text.</li>
+          </ul>
+        </section>
+
+        <section class="doc-section" id="configuration">
+          <div class="section-heading">
+            <p class="eyebrow">03 · OPTIONS</p>
+            <h2>Point the widget at your index.</h2>
+            <p>
+              SatisPalette has one setting, <code>data</code>, which is the URL
+              of your JSON index.
+            </p>
+          </div>
+
+          <div class="code-card">
+            <div class="code-header"><span>Configuration</span></div>
+            <pre><code>window.CommandPaletteConfig = {
+  data: "/assets/search.json"
+};</code></pre>
+          </div>
+          <p>
+            Assign <code>window.CommandPaletteConfig</code> before the
+            <code>widget.js</code> script. If omitted, the widget requests
+            <code>/search.json</code> from your site root.
+          </p>
+        </section>
+
+        <section class="doc-section" id="keyboard">
+          <div class="section-heading">
+            <p class="eyebrow">04 · USING THE PALETTE</p>
+            <h2>Search and jump to a result.</h2>
+            <p>The palette searches the titles and visible text of indexed pages.</p>
+          </div>
+          <div class="shortcut-list">
+            <div><span>Open or close</span><kbd>Ctrl</kbd><kbd>K</kbd></div>
+            <div><span>Close the palette</span><kbd>Esc</kbd></div>
+            <div><span>Go to a result</span><span class="shortcut-hint">Select a result</span></div>
+          </div>
+          <p>
+            Search is case-insensitive substring matching, and the widget shows
+            up to ten results. Arrow-key navigation and selecting a result with
+            <kbd>Enter</kbd> are not currently supported.
+          </p>
+        </section>
+
+        <section class="doc-section" id="troubleshooting">
+          <div class="section-heading">
+            <p class="eyebrow">05 · TROUBLESHOOTING</p>
+            <h2>A few things to check.</h2>
+          </div>
+
+          <details>
+            <summary>The palette opens but shows no results</summary>
+            <p>Check that the configured index URL returns valid JSON, each entry has a valid <code>url</code>, and the query appears in a page title or visible body text.</p>
+          </details>
+          <details>
+            <summary>An indexed page is missing</summary>
+            <p>Check the browser console and network panel. Confirm the page URL is correct, the page is available, and any cross-origin server allows the request with CORS headers.</p>
+          </details>
+          <details>
+            <summary>Local files do not load</summary>
+            <p>Use a local HTTP server instead of opening the page directly with a <code>file://</code> URL. The browser restricts fetch requests from local files.</p>
+          </details>
+
+          <div class="callout callout-warm">
+            <span class="callout-icon" aria-hidden="true">!</span>
+            <p>Load failures are reported in the browser's developer console under <code>[CommandPalette]</code>.</p>
+          </div>
+        </section>
+
+        <footer class="page-footer">
+          <a href="../">← Back to SatisPalette</a>
+          <a href="https://github.com/gtref/SatisPalette">Source on GitHub ↗</a>
+        </footer>
+        <p class="copy-status" id="copy-status" aria-live="polite"></p>
+      </main>
+    </div>
+  </body>
+</html>
