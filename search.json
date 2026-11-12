@@ -1,10 +1,10 @@
 [
     {
         "title": "Home",
-        "url": "/"
+        "url": "/SatisPalette/"
     },
     {
-        "title": "Documentation",
-        "url": "/docs/"
+        "title": "Docs",
+        "url": "/SatisPalette/docs"
     }
 ]
