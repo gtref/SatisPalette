@@ -120,7 +120,8 @@
             </div>
             <pre><code id="embed-code">&lt;script&gt;
   window.CommandPaletteConfig = {
-    data: "./search.json"
+    data: "./search.json",
+    theme: "light"
   };
 &lt;/script&gt;
 &lt;script src="./widget.js"&gt;&lt;/script&gt;</code></pre>
@@ -203,15 +204,16 @@
             <p class="eyebrow">03 · OPTIONS</p>
             <h2>Point the widget at your index.</h2>
             <p>
-              SatisPalette has one setting, <code>data</code>, which is the URL
-              of your JSON index.
+              Configure the JSON index URL and choose a light or dark palette
+              theme. The theme defaults to light.
             </p>
           </div>
 
           <div class="code-card">
             <div class="code-header"><span>Configuration</span></div>
             <pre><code>window.CommandPaletteConfig = {
-  data: "/assets/search.json"
+  data: "/assets/search.json",
+  theme: "dark"
 };</code></pre>
           </div>
           <p>

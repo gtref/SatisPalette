@@ -9,7 +9,7 @@
  * [x] Add CSS
  * [x] Build page index
  * [x] Search indexed pages
- * [ ] Theme switching @updates In Progress
+ * [x] Theme switching
  * [x] Enter opens selected result
  * [ ] Arrow navigation
  */
@@ -200,6 +200,8 @@
             document.createElement("div");
 
         div.id = "cp-palette";
+        div.dataset.theme =
+            config.theme === "dark" ? "dark" : "light";
 
         div.innerHTML = `
             <input
@@ -239,6 +241,12 @@
 
         style.textContent = `
             #cp-palette {
+                --cp-background: #fff;
+                --cp-foreground: #222;
+                --cp-muted: #666;
+                --cp-border: #ccc;
+                --cp-selected: #f3f3f3;
+
                 position: fixed;
                 top: 15%;
                 left: 50%;
@@ -247,9 +255,10 @@
                 width: 600px;
                 max-width: 90vw;
 
-                background: white;
+                background: var(--cp-background);
+                color: var(--cp-foreground);
 
-                border: 1px solid #ccc;
+                border: 1px solid var(--cp-border);
                 border-radius: 10px;
 
                 padding: 1rem;
@@ -260,11 +269,22 @@
                     0 10px 40px rgba(0,0,0,.25);
             }
 
+            #cp-palette[data-theme="dark"] {
+                --cp-background: #1e1e1e;
+                --cp-foreground: #f5f5f5;
+                --cp-muted: #b0b0b0;
+                --cp-border: #444;
+                --cp-selected: #343434;
+            }
+
             #cp-search {
                 width: 100%;
                 padding: .75rem;
                 box-sizing: border-box;
                 margin-bottom: 1rem;
+                background: var(--cp-background);
+                color: var(--cp-foreground);
+                border: 1px solid var(--cp-border);
             }
 
             #cp-results {
@@ -283,9 +303,13 @@
                 border-radius: 6px;
             }
 
+            .cp-result small {
+                color: var(--cp-muted);
+            }
+
             .cp-result.selected,
             .cp-result:hover {
-                background: #f3f3f3;
+                background: var(--cp-selected);
             }
         `;
 

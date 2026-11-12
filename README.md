@@ -13,13 +13,14 @@ Copy `widget.js` and create a `search.json` file in a location your site can ser
 ```html
 <script>
   window.CommandPaletteConfig = {
-    data: "./search.json"
+    data: "./search.json",
+    theme: "light"
   };
 </script>
 <script src="./widget.js"></script>
 ```
 
-The `data` value is the URL of the JSON search index. If omitted, the widget looks for `/search.json` at the site root.
+The `data` value is the URL of the JSON search index. If omitted, the widget looks for `/search.json` at the site root. Set `theme` to `"dark"` or `"light"` to choose the palette colors; it defaults to `"light"`.
 
 ## Build the search index
 

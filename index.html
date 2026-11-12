@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script>
             window.CommandPaletteConfig = {
-                data: "./search.json"
+                data: "./search.json",
+                theme: "light"
             };
         </script>
         <script src="widget.js"></script>
@@ -173,7 +174,10 @@
                 <h2>Set it up</h2>
                 <p>Configure the path to your search index before loading the widget. Then press <kbd>Ctrl</kbd> + <kbd>K</kbd> to search your pages.</p>
                 <pre><code>&lt;script&gt;
-  window.CommandPaletteConfig = { data: "./search.json" };
+  window.CommandPaletteConfig = {
+    data: "./search.json",
+    theme: "light"
+  };
 &lt;/script&gt;
 &lt;script src="widget.js"&gt;&lt;/script&gt;</code></pre>
             </section>

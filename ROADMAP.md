@@ -3,6 +3,6 @@
 ## 2026 13th november - 31st december
 - [x] Enter opens selected result
 - [ ] Navigate results with arrow keys
-- [ ] Theme switching
+- [x] Theme switching
 - [ ] Language changing
 - [ ] Displaying matching text
