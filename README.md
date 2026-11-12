@@ -46,5 +46,6 @@ When it starts, the widget fetches each listed page and indexes its title and vi
 - Type to search page titles and text.
 - Select a result to navigate to that page.
 - Press **Escape** to close the palette.
+- Press **Enter** to navigate to the top item in the results list.
 
 The widget currently shows up to ten matching results. Search is a simple, case-insensitive substring match; keyboard arrow navigation is not currently supported.

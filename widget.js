@@ -9,14 +9,16 @@
  * [x] Add CSS
  * [x] Build page index
  * [x] Search indexed pages
- * [ ] Enter opens selected result
+ * [ ] Theme switching @updates In Progress
+ * [x] Enter opens selected result
  * [ ] Arrow navigation
  */
 
 (() => {
 
     const config = window.CommandPaletteConfig || {
-        data: "/search.json"
+        data: "/search.json",
+        theme: "light"
     };
 
     let searchData = [];
@@ -45,6 +47,10 @@
 
         if (event.key === "Escape") {
             closePalette();
+        }
+
+        if (event.key === "Enter") {
+            goToResult(event);
         }
     }
 
@@ -152,9 +158,9 @@
 
         results.innerHTML = matches
             .slice(0, 10)
-            .map(page => `
+            .map((page, index) => `
                 <a
-                    class="cp-result"
+                    class="cp-result${index === 0 ? " selected" : ""}"
                     href="${page.url}"
                 >
                     <strong>${page.title}</strong>
@@ -163,6 +169,24 @@
                 </a>
             `)
             .join("");
+    }
+
+    function goToResult(event) {
+        const results = document.getElementById("cp-results");
+
+        if (!results) {
+            return;
+        }
+
+        const firstResult =
+            results.querySelector(".cp-result.selected");
+
+        if (!firstResult) {
+            return;
+        }
+
+        event.preventDefault();
+        firstResult.click();
     }
 
     function openPalette() {
@@ -260,6 +284,7 @@
                 border-radius: 6px;
             }
 
+            .cp-result.selected,
             .cp-result:hover {
                 background: #f3f3f3;
             }

@@ -2,5 +2,9 @@
     {
         "title": "Home",
         "url": "/"
+    },
+    {
+        "title": "Documentation",
+        "url": "/docs/"
     }
 ]
