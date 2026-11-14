@@ -50,7 +50,8 @@ When it starts, the widget fetches each listed page and indexes its title and vi
 - Press **Ctrl+K** to open or close the search palette.
 - Type to search page titles and text.
 - Select a result to navigate to that page.
+- Use the **Up** and **Down** arrow keys to highlight a result.
 - Press **Escape** to close the palette.
-- Press **Enter** to navigate to the top item in the results list.
+- Press **Enter** to navigate to the highlighted result.
 
-The widget currently shows up to ten matching results. Search is a simple, case-insensitive substring match; keyboard arrow navigation is not currently supported.
+The widget currently shows up to ten matching results. Search is a simple, case-insensitive substring match. Arrow navigation stops at the first and last results.

@@ -11,7 +11,7 @@
  * [x] Search indexed pages
  * [x] Theme switching
  * [x] Enter opens selected result
- * [ ] Arrow navigation
+ * [x] Arrow navigation
  */
 
 (() => {
@@ -46,6 +46,21 @@
 
         if (event.key === "Escape") {
             closePalette();
+        }
+
+        if (
+            event.key === "ArrowDown" ||
+            event.key === "ArrowUp"
+        ) {
+            const palette =
+                document.getElementById("cp-palette");
+
+            if (palette) {
+                event.preventDefault();
+                moveSelection(
+                    event.key === "ArrowDown" ? 1 : -1
+                );
+            }
         }
 
         if (event.key === "Enter") {
@@ -168,6 +183,46 @@
                 </a>
             `)
             .join("");
+    }
+
+    function moveSelection(direction) {
+        const results =
+            document.getElementById("cp-results");
+
+        if (!results) {
+            return;
+        }
+
+        const resultItems = [
+            ...results.querySelectorAll(".cp-result")
+        ];
+
+        if (resultItems.length === 0) {
+            return;
+        }
+
+        const selectedIndex = resultItems.findIndex(
+            result => result.classList.contains("selected")
+        );
+
+        const nextIndex = Math.max(
+            0,
+            Math.min(
+                resultItems.length - 1,
+                (selectedIndex < 0 ? 0 : selectedIndex) + direction
+            )
+        );
+
+        resultItems.forEach((result, index) => {
+            result.classList.toggle(
+                "selected",
+                index === nextIndex
+            );
+        });
+
+        resultItems[nextIndex].scrollIntoView({
+            block: "nearest"
+        });
     }
 
     function goToResult(event) {
