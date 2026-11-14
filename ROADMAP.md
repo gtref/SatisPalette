@@ -6,3 +6,4 @@
 - [x] Theme switching
 - [ ] Language changing
 - [ ] Displaying matching text
+- [ ] Allways on button
