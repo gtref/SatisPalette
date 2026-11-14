@@ -1,5 +1,9 @@
 # SatisPalette
 
+<img src="https://livepreview.usecartouche.com/satiscorp/brand/badges/offline.svg" alt="">
+<img src="https://livepreview.usecartouche.com/satiscorp/brand/badges/no-telemetry.svg" alt="">
+<img src="https://livepreview.usecartouche.com/satiscorp/brand/badges/no-ai.svg" alt="">
+
 SatisPalette is a small, client-side command palette for searching pages on a website. Visitors can open it with **Ctrl+K**, search page titles and text, and follow a result to the matching page.
 
 ## Get a copy
